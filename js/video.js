@@ -43,3 +43,5 @@ function changevolume() {
  video.volume = y;
 
 }
+document.getElementById("video").style.filter = "grayscale(100%)";
+document.getElementById("video").style.filter = "grayscale(0%)";
