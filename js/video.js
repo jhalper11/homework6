@@ -14,9 +14,9 @@ document.querySelector("#pause").addEventListener("click", function() {
     video.pause();
 	console.log("Pause Video");
 });
-document.querySelector("#volumeSlider").addEventListener("click", function(){
+document.querySelector("#volumeSlider").addEventListener("change", function(){
     video.value = this.value/100;
-    console.log("Volume: " + video.volume);
+    console.log("Current volume is: " + video.volume);
     document.querySelector("#volume").innerHTML=(video.volume*100)+'%';
 });
 document.querySelector("#faster").addEventListener("click", function(){
@@ -50,8 +50,10 @@ document.querySelector("#mute").addEventListener("click", function(){
     }
 });
 document.querySelector("#gray").addEventListener("click", function(){
-    document.getElementById("video").style.filter = "grayscale(100%)";
+    video.classList.add('oldTime');
+    console.log('grayscale');
 });
 document.querySelector("#normal").addEventListener("click", function(){
-    document.getElementById("video").style.filter = "grayscale(0%)";
+    video.classList.remove('oldTime');
+    console.log('original');
 });                                                
