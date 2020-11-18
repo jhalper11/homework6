@@ -14,29 +14,29 @@ document.querySelector("#pause").addEventListener("click", function() {
     video.pause();
 	console.log("Pause Video");
 });
-document.querySelector("#vol").addEventListener("click", function(){
+document.querySelector("#volumeSlider").addEventListener("click", function(){
     video.value = this.value/100;
     console.log("Volume: " + video.volume);
     document.querySelector("#volume").innerHTML=(video.volume*100)+'%';
 });
-document.querySelector("#speedup").addEventListener("click", function(){
+document.querySelector("#faster").addEventListener("click", function(){
     var currentspd = video.playbackRate;
     video.playbackRate = (currentspd)/0.9;
-    console.log("Current speed: " + currentspd);
+    console.log("Current speed is: " + currentspd);
 });
-document.querySelector("#slowdown").addEventListener("click", function(){
+document.querySelector("#slower").addEventListener("click", function(){
     var currentspd = video.playbackRate;
     video.playbackRate = (currentspd)*0.9;
-    console.log("Current speed: " + currentspd);
+    console.log("Current speed is: " + currentspd);
 });
 document.querySelector("#skip").addEventListener("click", function(){
     if(video.currentTime + 5 > video.duration){
         video.currentTime = 0;
     }
     else{
-        video.currentTime + 5;
+        video.currentTime += 5;
     }
-    console.log("Current time: " + video.currentTime);
+    console.log("Current time of the video: " + video.currentTime);
     video.play();
 });
 document.querySelector("#mute").addEventListener("click", function(){
